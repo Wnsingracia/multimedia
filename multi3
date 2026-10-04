@@ -1,0 +1,19 @@
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+mono = cv2.imread("mono.png")
+cabezap=cv2.imread("cabezapayaso.jpeg")
+original = mono.copy()
+y1,y2 = 90,430
+x1,x2 = 220, 590
+alto = y2-y1
+ancho = x2-x1
+cabezap=cv2.resize(cabezap, (ancho,alto))
+
+mono[y1:y2, x1:x2] = cabezap
+plt.imshow(cv2.cvtColor(mono,cv2.COLOR_BGR2RGB))
+plt.axis("off")
+plt.show()
+cv2.imwrite("monopayaso.jpeg", mono)
+
