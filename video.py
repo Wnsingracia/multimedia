@@ -1,6 +1,6 @@
 import cv2
 
-ruta_video = "video/si.mp4"
+ruta_video = "video/saori.gif"
 video = cv2.VideoCapture(ruta_video)
 
 if not video.isOpened():
@@ -13,7 +13,7 @@ while True:
     retorno, frame = video.read()
     if not retorno:
         break
-    ruta_frame = "frames/si/imagen"+str(contador)+".png"
+    ruta_frame = "frames/saori/imagen"+str(contador)+".png"
     cv2.imwrite(ruta_frame, frame)
     contador+=1
 video.release()
